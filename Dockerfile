@@ -19,4 +19,4 @@ USER 1000
 
 ENTRYPOINT [ "/usr/bin/code", "serve-web", "--without-connection-token", "--accept-server-license-terms" ]
 
-CMD [ "--host", "0.0.0.0", "--port", "8000", "--cli-data-dir", "$HOME/.vscode/cli-data", "--server-data-dir", "$HOME/.vscode/server-data" ]
+CMD [ "--host", "0.0.0.0", "--port", "8000", "--cli-data-dir", "/home/ubuntu/.vscode/cli-data", "--server-data-dir", "/home/ubuntu/.vscode/server-data" ]
