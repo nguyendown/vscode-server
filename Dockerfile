@@ -15,8 +15,8 @@ FROM base
 COPY --from=wget /usr/bin/code /usr/bin/code
 RUN chmod +x /usr/bin/code
 
-USER ubuntu
+USER 1000
 
 ENTRYPOINT [ "/usr/bin/code", "serve-web", "--without-connection-token", "--accept-server-license-terms" ]
 
-CMD [ "--host", "0.0.0.0", "--port", "8000", "--cli-data-dir", "/vscode/cli-data", "--server-data-dir", "/vscode/server-data" ]
+CMD [ "--host", "0.0.0.0", "--port", "8000", "--cli-data-dir", "$HOME/.vscode/cli-data", "--server-data-dir", "$HOME/.vscode/server-data" ]
