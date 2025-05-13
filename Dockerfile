@@ -1,10 +1,10 @@
 FROM ubuntu:latest as base
 
-RUN apt update && apt install -y --no-install-recommends ca-certificates
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
 
 FROM base as wget
 
-RUN apt update && apt install -y --no-install-recommends wget
+RUN apt-get update && apt-get install -y --no-install-recommends wget
 
 ARG VERSION="1.99.3"
 
