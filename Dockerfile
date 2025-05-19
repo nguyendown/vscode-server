@@ -15,8 +15,9 @@ FROM base
 COPY --from=wget /usr/bin/code /usr/bin/code
 RUN chmod +x /usr/bin/code
 
-USER 1000
+RUN userdel -r ubuntu && useradd -m -s /bin/bash -u 1000 vscode
+USER vscode
 
 ENTRYPOINT [ "/usr/bin/code", "serve-web", "--without-connection-token", "--accept-server-license-terms" ]
 
-CMD [ "--host", "0.0.0.0", "--port", "8000", "--cli-data-dir", "/home/ubuntu/.vscode/cli-data", "--server-data-dir", "/home/ubuntu/.vscode/server-data" ]
+CMD [ "--host", "0.0.0.0", "--port", "8000", "--cli-data-dir", "/home/vscode/.vscode/cli-data", "--server-data-dir", "/home/vscode/.vscode/server-data" ]
