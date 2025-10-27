@@ -1,8 +1,8 @@
-FROM ubuntu:latest as base
+FROM ubuntu:latest AS base
 
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
 
-FROM base as wget
+FROM base AS wget
 
 RUN apt-get update && apt-get install -y --no-install-recommends wget
 
