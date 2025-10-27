@@ -22,12 +22,12 @@ RUN apt-get update \
   git \
   python3
 
+USER vscode
+
 RUN \
   # git config --global user.name name \
   # git config --global user.email user@email \
   git config --global core.editor "code --wait"
-
-USER vscode
 
 ENTRYPOINT [ "/usr/bin/code", "serve-web", "--without-connection-token", "--accept-server-license-terms" ]
 
