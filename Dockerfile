@@ -13,7 +13,7 @@ ARG VERSION="1.105.1"
 
 RUN wget --no-hsts -qO- https://update.code.visualstudio.com/${VERSION}/cli-linux-x64/stable | tar xvz -C /usr/bin/
 
-FROM base
+FROM zmkfirmware/zmk-dev-arm:stable
 
 COPY --from=wget /usr/bin/code /usr/bin/code
 RUN chmod +x /usr/bin/code
