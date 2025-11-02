@@ -29,8 +29,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-          # Optional: Add more tags based on commit SHA, branch name, etc.
-          # tags: |
-          #   ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-          #   ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:devzmk
