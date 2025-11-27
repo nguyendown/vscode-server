@@ -29,7 +29,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:test
           # Optional: Add more tags based on commit SHA, branch name, etc.
           # tags: |
           #   ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
