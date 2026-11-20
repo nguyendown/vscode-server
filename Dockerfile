@@ -9,7 +9,7 @@ FROM base AS wget
 
 RUN apt-get update && apt-get install -y --no-install-recommends wget
 
-ARG VERSION="1.105.1"
+ARG VERSION="latest"
 
 RUN wget --no-hsts -qO- https://update.code.visualstudio.com/${VERSION}/cli-linux-x64/stable | tar xvz -C /usr/bin/
 
